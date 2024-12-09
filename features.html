@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .feature {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature:hover h3 {
+            color: #ff6347;
+        }
+
+        .feature:hover p {
+            color: #333;
+        }
+
+        .exit-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .exit-btn img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .exit-btn:hover {
+            background-color: #e5533c;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .feature {
+            background-color: #444;
+            border-color: #666;
+        }
+
+        .dark-mode .feature:hover h3 {
+            color: #ffcc33;
+        }
+
+        .dark-mode .feature p {
+            color: #bbb;
+        }
+
+        .dark-mode .feature:hover p {
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exit Button -->
+    <a href="main.html" class="exit-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" alt="Exit Icon">
+        Exit
+    </a>
+
+    <h2>Features</h2>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/3791/3791227.png" alt="Fast Performance Icon">
+        <h3>Fast Performance</h3>
+        <p>Experience fast and reliable performance with our services.</p>
+    </div>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Secure & Reliable Icon">
+        <h3>Secure & Reliable</h3>
+        <p>Your data is safe with us. We prioritize security.</p>
+    </div>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/1864/1864509.png" alt="Scalable Solutions Icon">
+        <h3>Scalable Solutions</h3>
+        <p>Grow your business with scalable and adaptable solutions.</p>
+    </div>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/3063/3063139.png" alt="24/7 Support Icon">
+        <h3>24/7 Support</h3>
+        <p>Our support team is available around the clock to assist you.</p>
+    </div>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="Affordable Plans Icon">
+        <h3>Affordable Plans</h3>
+        <p>Choose from a variety of cost-effective plans that fit your budget.</p>
+    </div>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="User-Friendly Interface Icon">
+        <h3>User-Friendly Interface</h3>
+        <p>Our platform is designed to be easy and intuitive for users of all levels.</p>
+    </div>
+    <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/3407/3407441.png" alt="Real-Time Analytics Icon">
+        <h3>Real-Time Analytics</h3>
+        <p>Access detailed analytics to track your performance and progress.</p>
+    </div>
+
+    <script>
+        function setDarkMode() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        setDarkMode();
+
+        // Toggle logic for dark mode
+        document.body.addEventListener('dblclick', function () {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    </script>
+</body>
+</html>

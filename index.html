@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website??</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/CiurescuP/LogIn-Form/main/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        form h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #ddd;
+        }
+
+        form button {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: #007BFF;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+
+        .social-text {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-icon {
+            background: none;
+            border: 2px solid #ffffff;
+            padding: 0.5rem;
+            border-radius: 50%;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                width: 90%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Login Here</h3>
+        <label for="username">Email</label>
+        <input type="text" placeholder="Email" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" required>
+        <button>Log In</button>
+        <p class="social-text">Login with a social media account</p>
+        <div class="social-icons">
+            <!-- Facebook Login -->
+            <button type="button" class="social-icon fb" onclick="window.location.href='https://www.facebook.com/login'">
+                <i class="fa-brands fa-facebook"></i>
+            </button>
+            <!-- Twitter Login -->
+            <button type="button" class="social-icon tw" onclick="window.location.href='https://twitter.com/login'">
+                <i class="fa-brands fa-twitter"></i>
+            </button>
+            <!-- Instagram Login -->
+            <button type="button" class="social-icon in" onclick="window.location.href='https://www.instagram.com/accounts/login/'">
+                <i class="fa-brands fa-instagram"></i>
+            </button>
+        </div>
+        <p class="social-text">
+            <a href="register.html" style="color: #ffffff; text-decoration: underline;">Sign Up for New Account</a>
+        </p>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginButton = document.querySelector("form button");
+            if (loginButton) {
+                loginButton.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    window.location.href = "websiteee.html";
+                });
+            }
+        });
+    </script>
+</body>
+</html>

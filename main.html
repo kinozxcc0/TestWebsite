@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .nav-links a:hover {
+            transform: scale(1.2);
+            color: #ff6347;
+        }
+
+        .nav-links a span {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px 8px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover span {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .logo {
+            position: relative;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+        }
+
+        .logo span {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px 8px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            white-space: nowrap;
+        }
+
+        .logo:hover span {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .topbar {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="nav-links">
+            <a href="websiteee.html"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="about.html"><i class="fas fa-info-circle"></i><span>About Us</span></a>
+            <a href="features.html"><i class="fas fa-list"></i><span>Features</span></a>
+            <a href="mailto:kinozxc1@gmail.com?subject=Contact%20Us%20Message&body=Hello,%0A%0APlease%20enter%20your%20message%20here.%0A%0AThank%20you.">
+                <i class="fas fa-envelope"></i><span>Contact Us</span>
+            </a>
+            <a href="#" id="toggleMode"><i class="fas fa-adjust"></i><span>Light/Dark Mode</span></a>
+        </div>
+        <div class="logout">
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+        </div>
+    </div>
+
+    <script>
+        const toggleModeButton = document.getElementById('toggleMode');
+
+        function setDarkMode() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        setDarkMode();
+
+        toggleModeButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    </script>
+</body>
+</html>

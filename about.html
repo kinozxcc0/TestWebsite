@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            position: relative;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        .info-box img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .info-box p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .info-box {
+            background-color: #444;
+            border-color: #666;
+            color: #f4f4f4;
+        }
+
+        /* Exit button */
+        .exit-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .exit-btn img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .exit-btn:hover {
+            background-color: #e5533c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exit Button -->
+    <a href="main.html" class="exit-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" alt="Exit Icon">
+        Exit
+    </a>
+
+    <!-- Page Title -->
+    <h2>About Us</h2>
+
+    <!-- Email Section -->
+    <div class="info-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
+        <p><strong>Email:</strong> kinozxc1@gmail.com </p>
+    </div>
+
+    <!-- Phone Section -->
+    <div class="info-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone Icon">
+        <p><strong>Phone:</strong> +639946966006 </p>
+    </div>
+
+    <!-- Address Section -->
+    <div class="info-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Home Icon">
+        <p><strong>Home Address:</strong> Sultan Kudarat, Philippines</p>
+    </div>
+
+    <script>
+        function setDarkMode() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        setDarkMode();
+
+        // Toggle logic for dark mode
+        document.body.addEventListener('dblclick', function () {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    </script>
+</body>
+</html>
